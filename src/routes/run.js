@@ -3,7 +3,7 @@ var router = express.Router();
 var checkSingleRun = require("../middleware/checkSingleRun.js")
 var kue = require('kue');
 
-router.post('/',checkSingleRun,function(){
+router.post('/',checkSingleRun,function(req,res,next){
   queue = kue.createQueue();
 
   var job = queue.create('singleRun',{
@@ -15,8 +15,10 @@ router.post('/',checkSingleRun,function(){
   });
 
   job.on('complete', function(result){
-    console.log('Job completed with data ', result);
-
+    res.json({
+      status:200,
+      result:result
+    })
   })
 
 });
