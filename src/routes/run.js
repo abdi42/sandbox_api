@@ -10,9 +10,7 @@ router.post('/',checkSingleRun,function(req,res,next){
     source:req.body.source,
     input:req.body.input,
     lang:req.body.lang
-  }).removeOnComplete(true).save( function(err){
-     if( !err ) console.log( job.id );
-  });
+  }).removeOnComplete(true).save();
 
   job.on('complete', function(result){
     res.json({
