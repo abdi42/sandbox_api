@@ -3,6 +3,7 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var compression = require('compression');
 
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
@@ -10,6 +11,7 @@ var run = require('./routes/run.js');
 //var sandboxInit = require("./routes/sandbox/init.js")
 
 var app = express();
+app.use(compression());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
