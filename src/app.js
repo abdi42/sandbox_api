@@ -22,8 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/check', check);
 app.use('/run', run);
-app.use('/sandbox/run',sandboxRun)
-app.use('/sandbox/init',sandboxInit)
+//app.use('/sandbox/run',sandboxRun)
+//app.use('/sandbox/init',sandboxInit)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
