@@ -1,4 +1,4 @@
-var langs = require("./lib/langs.js");
+var langs = require("./langs.js");
 
 module.exports = function(req,res,callback){
   if(!req.body.input){
