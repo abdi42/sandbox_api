@@ -15,6 +15,11 @@ router.post('/',checkSingleRun,function(){
      if( !err ) console.log( job.id );
   });
 
+  job.on('complete', function(result){
+    console.log('Job completed with data ', result);
+
+  })
+
 });
 
 module.exports = router;
