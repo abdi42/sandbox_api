@@ -2,7 +2,7 @@ var langs = require("./langs.js");
 
 module.exports = function(req,res,callback){
   if(!req.body.input){
-    req.body.input = [[null]]
+    req.body.input = [[]]
   }
   else {
     if(Array.isArray(req.body.input)){
