@@ -5,7 +5,7 @@ module.exports = function(req,res,next){
     return next(err);
   }
 
-  if(!req.body.source){
+  if(!req.body.token){
     var err = new Error("customer source not provided");
     err.status = 400;
     return next(err)
