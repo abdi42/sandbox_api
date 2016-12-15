@@ -7,6 +7,7 @@ var compression = require('compression');
 
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
+var subscriptions = require("./routes/subscriptions.js");
 //var sandboxRun = require("./routes/sandbox/run.js");
 //var sandboxInit = require("./routes/sandbox/init.js")
 
@@ -24,6 +25,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/check', check);
 app.use('/run', run);
+app.use('/subscriptions',subscriptions);
+
 //app.use('/sandbox/run',sandboxRun)
 //app.use('/sandbox/init',sandboxInit)
 // catch 404 and forward to error handler
