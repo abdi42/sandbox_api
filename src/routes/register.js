@@ -31,7 +31,7 @@ router.post('/',function(req,res,next){
 });
 
 function checkObject(obj,expectedKeys,callback){
-  for(var i=0;i<keys.length;i++){
+  for(var i=0;i<expectedKeys.length;i++){
     var key = expectedKeys[i]
     if(!obj[key]){
       var err = new Error(key + " not provided")
