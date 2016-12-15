@@ -7,7 +7,8 @@ var compression = require('compression');
 
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
-var subscriptions = require("./routes/subscriptions.js");
+var subscribe = require("./routes/subscribe.js");
+var unsubscribe = require("./routes/unsubscribe.js");
 //var sandboxRun = require("./routes/sandbox/run.js");
 //var sandboxInit = require("./routes/sandbox/init.js")
 
@@ -25,7 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/check', check);
 app.use('/run', run);
-app.use('/subscriptions',subscriptions);
+app.use('/subscribe',subscribe);
+app.use('/unsubscribe',unsubscribe);
 
 //app.use('/sandbox/run',sandboxRun)
 //app.use('/sandbox/init',sandboxInit)
