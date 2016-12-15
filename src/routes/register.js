@@ -39,6 +39,8 @@ function checkObject(obj,expectedKeys,callback){
       return callback(err);
     }
   }
+
+  return callback(null);
 }
 
 module.exports = router;
