@@ -3,7 +3,7 @@ var router = express.Router();
 var kue = require('kue'),
 queue = kue.createQueue();
 
-router.post('/',checkCustomerInfo,function(req,res,next){
+router.post('/',function(req,res,next){
   if(!req.body.email){
     var err = new Error("customer email not provided");
     err.status = 400;
