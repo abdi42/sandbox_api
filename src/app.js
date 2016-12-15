@@ -4,16 +4,22 @@ var favicon = require('serve-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compression = require('compression');
+var mongoose = require('mongoose');
 
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
 var subscribe = require("./routes/subscribe.js");
-var unsubscribe = require("./routes/unsubscribe.js");
+var unsubscribe = require("./routes/unsubscribe.js");v
+var register = require("./routes/register.js");
+
 //var sandboxRun = require("./routes/sandbox/run.js");
 //var sandboxInit = require("./routes/sandbox/init.js")
 
 var app = express();
 app.use(compression());
+
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/api');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,6 +34,7 @@ app.use('/check', check);
 app.use('/run', run);
 app.use('/subscribe',subscribe);
 app.use('/unsubscribe',unsubscribe);
+app.use('/register',register);
 
 //app.use('/sandbox/run',sandboxRun)
 //app.use('/sandbox/init',sandboxInit)
