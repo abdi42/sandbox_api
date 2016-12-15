@@ -10,9 +10,11 @@ router.post('/',checkCustomerInfo,function(req,res,next){
   console.log("job created");
   job.on('complete', function(result) {
       console.log(result)
+      res.json(result);
   }).on('failed', function(errorMessage) {
       console.log('Job failed');
       console.log(errorMessage)
+      next(errorMessage);
   })
 
 });
