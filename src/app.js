@@ -9,8 +9,8 @@ var mongoose = require('mongoose');
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
 var subscribe = require("./routes/subscribe.js");
-var unsubscribe = require("./routes/unsubscribe.js");
-var register = require("./routes/register.js");
+var unsubscribe = require("./routes/user/unsubscribe.js");
+var register = require("./routes/user/register.js");
 
 //var sandboxRun = require("./routes/sandbox/run.js");
 //var sandboxInit = require("./routes/sandbox/init.js")
