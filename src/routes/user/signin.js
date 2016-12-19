@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var checkCustomerInfo = require("../middleware/checkCustomerInfo.js")
 var kue = require('kue');
 
 router.post('/',function(req,res,next){

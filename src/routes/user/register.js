@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userSchema = require("../models/user.js");
+var userSchema = require("../../models/user.js");
 
 router.post('/',function(req,res,next){
   checkObject(req.body,['email','username','password'],function(err){
