@@ -6,7 +6,8 @@ var crypto = require('crypto');
 var userSchema = new Schema({
   email: String,
   username:String,
-  canceled:{type:Boolean,default:false}
+  canceled:{type:Boolean,default:false},
+  secret_key:String
 });
 
 userSchema.methods.setPassword = function(password){

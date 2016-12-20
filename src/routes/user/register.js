@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var userSchema = require("../../models/user.js");
+var hat = require('hat');
+var rack = hat.rack();
 
 router.post('/',function(req,res,next){
   checkObject(req.body,['email','username','password'],function(err){
@@ -15,7 +17,8 @@ router.post('/',function(req,res,next){
 
       var user = new userSchema({
         email:req.body.email,
-        username:req.body.username
+        username:req.body.username,
+        secret_key:rack()
       })
 
       user.setPassword(req.body.password);
