@@ -5,9 +5,9 @@ var kue = require('kue');
 
 router.post('/',checkSingleRun,function(req,res,next){
   queue = kue.createQueue();
-  
+
   console.log("Running job")
- 
+
  var job = queue.create('singleRun',{
     source:req.body.source,
     input:req.body.input,
