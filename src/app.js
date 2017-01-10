@@ -8,9 +8,6 @@ var mongoose = require('mongoose');
 
 var check = require('./routes/check.js');
 var run = require('./routes/run.js');
-var subscribe = require("./routes/user/subscribe.js");
-var unsubscribe = require("./routes/user/unsubscribe.js");
-var register = require("./routes/user/register.js");
 
 //var sandboxRun = require("./routes/sandbox/run.js");
 //var sandboxInit = require("./routes/sandbox/init.js")
@@ -32,9 +29,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/check', check);
 app.use('/run', run);
-app.use('/subscribe',subscribe);
-app.use('/unsubscribe',unsubscribe);
-app.use('/register',register);
 
 //app.use('/sandbox/run',sandboxRun)
 //app.use('/sandbox/init',sandboxInit)

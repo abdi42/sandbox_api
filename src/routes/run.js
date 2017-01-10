@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var checkSingleRun = require("../middleware/checkSingleRun.js")
+var checkSecret = require("../middleware/checkSecret.js");
 var kue = require('kue');
 
-router.post('/',checkSingleRun,function(req,res,next){
+router.post('/',checkSecret,checkSingleRun,function(req,res,next){
   queue = kue.createQueue();
 
   console.log("Running job")
