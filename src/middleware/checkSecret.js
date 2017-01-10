@@ -1,6 +1,8 @@
 var kue = require('kue');
 
 module.exports = function(req,res,next){
+  queue = kue.createQueue();
+
   var job = queue.create('checkSecret',req.body).removeOnComplete(true).save();
   console.log('job created');
   job.on('complete', function(result) {
