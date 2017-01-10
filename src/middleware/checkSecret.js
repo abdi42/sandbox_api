@@ -9,6 +9,6 @@ module.exports = function(req,res,next){
       next(null)
   }).on('failed', function(errorMessage) {
       console.log('Job Failed');
-      next(errorMessage)
+      next("Invalid Key")
   })
 }
