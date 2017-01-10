@@ -7,8 +7,6 @@ var kue = require('kue');
 router.post('/',checkSingleRun,function(req,res,next){
   queue = kue.createQueue();
 
-  console.log("Running job")
-
  var job = queue.create('singleRun',{
     source:req.body.source,
     input:req.body.input,
@@ -16,7 +14,6 @@ router.post('/',checkSingleRun,function(req,res,next){
   }).removeOnComplete(true).save();
 
   job.on('complete', function(result){
-    console.log('Job finished');
     res.json({
       status:200,
       result:result
